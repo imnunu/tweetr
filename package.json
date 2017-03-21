@@ -17,6 +17,8 @@
     "md5": "^2.1.0"
   },
   "devDependencies": {
+    "eslint": "^3.18.0",
+    "eslint-config-google": "^0.7.1",
     "nodemon": "^1.9.2"
   }
 }
