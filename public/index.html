@@ -40,7 +40,7 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form method="POST" action="/tweets">
+        <form id="postNewTweet" method="POST" action="/tweets">
           <textarea name="text" placeholder="What are you humming about?"></textarea>
           <input type="submit" value="Tweet">
           <span class="counter">140</span>
@@ -48,7 +48,7 @@
       </section>
 
       <section id="tweet-container">
-        <article class="tweet-post">
+        <!-- <article class="tweet-post">
           <header class="tweet-header">
             <img class="avatar" src="/images/1490176973_rainbow_cupcake.png">
             <h2 class="userName">Bill Fields</h2>
@@ -56,13 +56,13 @@
           </header>
           <p class="tweet-content">Little tweet here</p>
           <footer class="tweet-footer">
-            <p><span class="date">someDate</span> days ago</p>
-            
+          <span class="date">someDate</span>   <p>days ago</p>
+
           </footer>
-        </article>
+        </article> -->
       </section>
 
     </main>
-    <script src="jquery.js"></script>
+    <!-- <script src="jquery.js"></script> -->
     </body>
 </html>
