@@ -42,30 +42,57 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- #allTweets {
-   position: absolute;
-   border-radius: 8px;
-   border: 2px solid LightGray;
-   background-color: white;
-   box-shadow: 1px;
-   padding: 15px;
-   left: 2em;
-   right: 2em;
-   top: 300px;
+.tweet-post {
+  
+  opacity: 0.7;
+  text-align: left;
+  background-color: white;
+  border: 1px solid #ccc;
+  top: 300px;
+  border-radius: 8px;
+  box-shadow: 1px;
+  padding: 15px;
+  left: 2em;
+  right: 2em;
+  width: 88%;
  }
 
-.user_img {
-  height: 80px;
-  width: 80px;
-  padding: 5px;
-  border-radius: 5px;
-  float: left;
+.tweet-post:hover {
+  opacity: 1;
+ }
+
+.tweet-header{
+  background-color: #efefef ;
 }
 
-.username {
-  float: left;
-  font-size: 150%;
-  background-color: #eee;
+.avatar{
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+  padding-top: 5px;
 }
 
- 
+.userName {
+  display: inline-block;
+  margin: 0;
+  vertical-align: top;
+  padding-top: 5px;
+}
+
+.handle {
+  float: right;
+  padding-right: 10px;
+}
+
+.date{
+  margin:0;
+  padding:10px;
+  background: white;
+
+}
+.tweet-content{
+  background: white;
+  margin:0;
+  padding: 30px 15px;
+  border-bottom: 1px solid #ccc;
+}

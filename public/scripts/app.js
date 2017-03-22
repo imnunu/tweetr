@@ -54,19 +54,35 @@
    }
  ];
 
- function renderTweets(tweets) {
-   // loops through tweets
-     // calls createTweetElement for each tweet
-     // takes return value and appends it to the tweets container
-     tweets.forEach(function (item) {
-       createTweetElement(item);
-     })
- }
+function renderTweets(tweets) {
+    // loops through tweets
+    // calls createTweetElement for each tweet
+    // takes return value and appends it to the tweets container
+  tweets.forEach(function(tweet) {
+  var $tweet = createTweetElement(tweet);
+  $('#tweet-container').append($tweet);
+  });
+}
 
- function createTweetElement(tweet) {
-   var $tweet = $('<article>').addClass('tweet');
-   // ...
-   return $tweet;
- }
+function createTweetElement(tweet) {
+  var $tweet = $('<article>').addClass('tweet-post');
+  var $header = $('<header>').addClass('tweet-header');
+  var $avatar = $('<img>').addClass('avatar').attr('src', tweet.user.avatars.regular);
+  var $userName = $('<h2>').addClass('userName').text(tweet.user.name);
+  var $handle = $('<p>').addClass('handle').text(tweet.user.handle);
+  var $content = $('<p>').addClass('tweet-content').text(tweet.content.text);
+  var $footer = $('<footer>').addClass('tweet-footer');
+  var $createDate = $('<span>').addClass('date').text((tweet.created_at).toString());
 
- renderTweets(data);
+  $header.append($avatar, $userName, $handle);
+  $footer.append($createDate);
+  $tweet.append($header);
+  $tweet.append($content);
+  $tweet.append($footer);
+
+  return $tweet;
+}
+
+$(document).ready(function() {
+  renderTweets(data);
+});
