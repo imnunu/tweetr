@@ -2,7 +2,7 @@
 
 .new-tweet {
   position: absolute;
-  border-radius: 10px;
+  border-radius: 8px;
   border: 2px solid LightGray;
   background-color: #eee;
   padding: 5px;
