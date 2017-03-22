@@ -29,3 +29,7 @@ textarea {
   position: absolute;
   right: 10px;
 }
+
+.error {
+  color: red;
+}
