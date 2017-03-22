@@ -34,7 +34,7 @@ $(document).ready(function() {
   // takes return value and appends it to the tweets container
    function renderTweets(tweets) {
      tweets.forEach(function(tweet) {
-     var $tweet = createTweetElement(tweet);
+     let $tweet = createTweetElement(tweet);
      $('#tweet-container').append($tweet);
      });
    }
@@ -46,7 +46,7 @@ $(document).ready(function() {
     $.ajax({
       method: 'GET',
       url:'/tweets'
-    }).done(function(success) {
+    }).done(function(data) {
       console.log('GET function success');
       renderTweets(data);
       });
