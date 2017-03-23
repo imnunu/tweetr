@@ -56,7 +56,7 @@ $(document).ready(function() {
 $(function() {
   $('#postNewTweet').on('submit', function(event) {
     event.preventDefault();
-    let $input = $("textarea").serialize();
+    let $input = $('.new-tweet textarea').serialize();
 
     if ($input.length > 140) {
       alert('Your tweet content is too long!')
@@ -70,6 +70,7 @@ $(function() {
         }).done(function(success) {
             $('#postNewTweet').removeClass('error');
             window.location.reload(true);
+            $('.new-tweet textarea').val('');
             console.log(success);
           }).fail(function(err) {
             $('#postNewTweet').addClass('error');
