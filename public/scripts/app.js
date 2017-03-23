@@ -10,6 +10,7 @@ $(document).ready(function() {
 
   const data = [];
 
+
   function createTweetElement(tweet) {
     var $tweet = $('<article>').addClass('tweet-post');
     var $header = $('<header>').addClass('tweet-header');
@@ -18,10 +19,11 @@ $(document).ready(function() {
     var $handle = $('<p>').addClass('handle').text(tweet.user.handle);
     var $content = $('<p>').addClass('tweet-content').text(tweet.content.text);
     var $footer = $('<footer>').addClass('tweet-footer');
-    var $createDate = $('<span>').addClass('date').text((tweet.created_at).toString());
+    var $timeago = $('<time>').addClass('timeago').attr('datetime', new Date(tweet.created_at).toISOString());
 
+    $("time.timeago").timeago();
     $header.append($avatar, $userName, $handle);
-    $footer.append($createDate);
+    $footer.append($timeago);
     $tweet.append($header);
     $tweet.append($content);
     $tweet.append($footer);
@@ -33,15 +35,20 @@ $(document).ready(function() {
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
    function renderTweets(tweets) {
-     tweets.forEach(function(tweet) {
-     let $tweet = createTweetElement(tweet);
-     $('#tweet-container').append($tweet);
-     });
+    //  tweets.forEach(function(tweet) {
+    //  let $tweet = createTweetElement(tweet);
+    //  $('#tweet-container').append($tweet);
+    //  });
+     $('#tweet-container').append(tweets.map(createTweetElement));
+
    }
 
 
-  $(function() {
-    console.log('test');
+  // $(function() {
+  // function LoadTweet(tweets) {
+
+
+    console.log('LoadTweet');
 
     $.ajax({
       method: 'GET',
@@ -50,7 +57,8 @@ $(document).ready(function() {
       console.log('GET function success');
       renderTweets(data);
       });
-  });
+  // }
+  // });
 
   // renderTweets(data);
 });
@@ -113,22 +121,26 @@ $(function() {
   $('#postNewTweet').on('submit', function(event) {
     event.preventDefault();
     let $input = $("textarea").serialize();
-    $.ajax({
-        url:'/tweets',
-        method: 'POST',
-        data: $input,
-      }).done(function(success) {
-          $('#postNewTweet').removeClass('error');
-          console.log(success);
 
+    if ($input.length > 140) {
+      alert('Your tweet content is too long!')
+    } else if ($input === '' || $input === ' ') {
+      alret ('Please type in something')
+    } else {
+      $.ajax({
+          url:'/tweets',
+          method: 'POST',
+          data: $input,
+        }).done(function(success) {
+            $('#postNewTweet').removeClass('error');
+            window.location.reload(true);
 
-
-
-        }).fail(function(err) {
-          $('#postNewTweet').addClass('error');
-        });
+            console.log(success);
+          }).fail(function(err) {
+            $('#postNewTweet').addClass('error');
+          });
+        }
       });
-
   });
 
 

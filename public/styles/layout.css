@@ -43,7 +43,7 @@ body {
  */
 
 .tweet-post {
-  
+
   opacity: 0.7;
   text-align: left;
   background-color: white;
@@ -84,7 +84,7 @@ body {
   padding-right: 10px;
 }
 
-.date{
+.timeago{
   margin:0;
   padding:10px;
   background: white;
