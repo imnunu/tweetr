@@ -35,14 +35,15 @@
       <img class="logo" src="/images/bird.png">
 
       <span class="header">Tweeter</span>
+      <button id="compose" type="button" name="button">Compose</button>
     </nav>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <section class="new-tweet">
+      <section class="new-tweet" style="display:none;">
         <h2>Compose Tweet</h2>
-        <form id="postNewTweet" method="POST" action="/tweets">
-          <textarea name="text" placeholder="What are you humming about?"></textarea>
+        <form method="POST" action="/tweets">
+          <textarea id="textarea" name="text" placeholder="What are you humming about?"></textarea>
           <input type="submit" value="Tweet">
           <span class="counter">140</span>
         </form>
