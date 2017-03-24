@@ -2,7 +2,8 @@
   background-color: #00a087;
   top: 0;
   width: 100%;
-  color: #e8fdff;
+  /*color: #e8fdff;*/
+  color: rgba(2, 128, 144, 1);
   position: fixed;
   z-index: 1000;
   padding-left: 2em;
