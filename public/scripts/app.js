@@ -36,10 +36,7 @@ $(document).ready(function() {
    function renderTweets(tweets) {
      $('#tweet-container').append(tweets.map(createTweetElement));
      $("time.timeago").timeago();
-     //  tweets.forEach(function(tweet) {
-     //  let $tweet = createTweetElement(tweet);
-     //  $('#tweet-container').append($tweet);
-     //  });
+
    }
 
     $.ajax({
@@ -52,21 +49,21 @@ $(document).ready(function() {
 });
 
 
-//Form Submission using JQuery
+// Form Submission using JQuery
 $(function() {
   $('#postNewTweet').on('submit', function(event) {
     event.preventDefault();
-    let $input = $('.new-tweet textarea').serialize();
-
-    if (!($input > 0) ) {
-      alert('Please type in something')
-    } else if ($input.length > 140) {
+    let input = $('.new-tweet textarea');
+    if (!input.val()) {
+      alert("It's empty!")
+    } else if (input.val().length > 140) {
       alert('Your tweet content is too long!')
     } else {
+      input = input.serialize();
       $.ajax({
           url:'/tweets',
           method: 'POST',
-          data: $input,
+          data: input,
         }).done(function(success) {
             $('#postNewTweet').removeClass('error');
             window.location.reload(true);
