@@ -15,9 +15,6 @@ html {
  */
 
 body {
-
-  width: 100%;
-  margin-top: 80px;
   color: #244751;
   background-color: #eee;
   font-family: 'Fjalla One', sans-serif;
@@ -43,40 +40,36 @@ body {
  */
 
 .tweet-post {
-
-  opacity: 0.7;
-  text-align: left;
+  opacity: 0.8;
   background-color: white;
   border: 1px solid #ccc;
-  top: 300px;
   border-radius: 8px;
-  box-shadow: 1px;
-  padding: 15px;
   left: 2em;
   right: 2em;
-  width: 88%;
+  margin: 20px;
  }
 
 .tweet-post:hover {
   opacity: 1;
+  border: 1px solid #808080;
  }
 
 .tweet-header{
   background-color: #efefef ;
+  height: 70px;
 }
 
 .avatar{
   height: 50px;
   width: 50px;
-  margin-right: 10px;
-  padding-top: 5px;
+  margin: 10px;
+  border-radius: 5px;
+  float: left;
 }
 
 .userName {
-  display: inline-block;
-  margin: 0;
-  vertical-align: top;
-  padding-top: 5px;
+  float: left;
+  font-weight: bold;
 }
 
 .handle {
@@ -84,15 +77,22 @@ body {
   padding-right: 10px;
 }
 
-.timeago{
-  margin:0;
-  padding:10px;
-  background: white;
 
-}
-.tweet-content{
-  background: white;
-  margin:0;
-  padding: 30px 15px;
+.tweet-content {
+  padding-top: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
   border-bottom: 1px solid #ccc;
+  font-weight: normal;
+}
+
+.tweet-footer {
+  border-bottom: 1px solid #ccc;
+}
+
+.timeago{
+  margin-left: 15px;
+  font-size: 80%;
+  font-weight: lighter;
 }

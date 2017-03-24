@@ -58,10 +58,10 @@ $(function() {
     event.preventDefault();
     let $input = $('.new-tweet textarea').serialize();
 
-    if ($input.length > 140) {
+    if (!($input > 0) ) {
+      alert('Please type in something')
+    } else if ($input.length > 140) {
       alert('Your tweet content is too long!')
-    } else if ($input === '' || $input === ' ') {
-      alret ('Please type in something')
     } else {
       $.ajax({
           url:'/tweets',

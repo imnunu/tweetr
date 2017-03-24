@@ -2,7 +2,7 @@
 
 .new-tweet {
   border-radius: 8px;
-  margin-top: 120px;
+  margin-top: 20px;
   border: 2px solid LightGray;
   background-color: #eee;
   padding: 5px;
@@ -28,7 +28,7 @@
 .counter {
   position: relative;
   text-align: right;
-  left: 280px;
+  left: 290px;
 }
 
 .error {
