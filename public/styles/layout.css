@@ -15,9 +15,7 @@ html {
  */
 
 body {
-  /*color: #244751;*/
   color: rgba(5, 102, 141, 1);
-  /*background-color: #eee;*/
   background-color: rgba(247, 255, 247, 1);
   font-family: 'Fjalla One', sans-serif;
 
@@ -33,7 +31,7 @@ body {
   top: 80px;
   width: 450px;
   min-height: 900px;
-  background-color: white;
+  background-color: rgba(247, 255, 247, 1);
 
 }
 
@@ -44,7 +42,6 @@ body {
 .tweet-post {
   opacity: 0.8;
   background-color: rgba(247, 255, 247, 1);
-  /*border: 1px solid #ccc;*/
   border: 1px solid rgba(5, 102, 141, 1);
   border-radius: 8px;
   left: 2em;
@@ -58,8 +55,10 @@ body {
  }
 
 .tweet-header{
-  /*background-color: #efefef ;*/
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
   background-color: rgba(78, 205, 196, 1);
+  overflow: hidden;
   height: 70px;
 }
 
@@ -92,6 +91,8 @@ body {
 
 .tweet-footer {
   border-bottom: 1px solid #ccc;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
 .timeago{
