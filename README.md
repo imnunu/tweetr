@@ -9,6 +9,7 @@ A simple single-page AJAX-based Twitter.
 - client-side JS
 - jQuery
 - AJAX
+- MongoDB
 
 ## Screenshots
 
